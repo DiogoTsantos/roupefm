@@ -32,21 +32,76 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Esperança FM</title>
     </head>
-    <body>
-        <header>
-
-        </header>
-        <main>
-            <img src="img/LogoMarca.png" alt="Esperança FM"/>
-        </main>
-        <footer>
-            <audio controls autoplay src="http://server01.streamingilimitado.com.br:7126/;">
-            </audio>
-        </footer>
+    <body onload="onDeviceReady();">
+        <div id="container">
+            <header>
+                <div class="logo">
+                    <img src="img/icon-roupe.png" alt="Logo" />
+                    Esperança FM
+                </div>
+                <div class="bars">
+                    <button id="contato">
+                        <img src="img/contact.png" alt="Contato" />
+                    </button>
+                    <button id="minizar">
+                        <img src="img/smartphone.png" alt="Minimizar" />
+                    </button>
+                </div>
+            </header>
+            <main>
+                <div id="aba-main">
+                    <img src="img/bg-mulher.png" alt="Esperança FM"/>
+                </div>
+                <div id="aba-contato">
+                    <div class="address">
+                        <img src="img/map-location.png" alt="Localização" />
+                        <div>
+                            Rua Donaciano Correia, nº 202, Japaratuba - Sergipe
+                        </div>
+                    </div>
+                    <div>
+                        <img src="img/whatsapp.png" alt="Whatsapp" />
+                        <a href="tel:79996909284">(79) 9 9690 - 9284</a>
+                    </div>
+                    <div>
+                        <img src="img/map-location.png" alt="Mail" />
+                        <a href="mailto:esperanca1059fm@gmail.com">esperanca1059fm@gmail.com</a>
+                    </div>
+                    <div class="social">
+                        <div>
+                            <a href="https://pt-br.facebook.com/esperancafm105.9/">
+                                <img src="img/facebook.png" alt="Facebook" />
+                                Esperança FM 105.9
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.instagram.com/esperancafm105.9/">
+                                <img src="img/instagram.png" alt="Instagram" />
+                                @EsperançaFM105.9
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <button id="volume">
+                    <img src="img/speaker.png" alt="Volume" />
+                </button>
+                <button id="play">
+                    <img src="img/play-button.png" alt="Play" />
+                </button>
+                <button id="share">
+                    <img src="img/share.png" alt="Share" />
+                </button>
+                <audio controls autoplay src="http://server01.streamingilimitado.com.br:7126/;" style="display:none;">
+                </audio>
+            </footer>
+        </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <!-- <script type="text/javascript" src="js/bootstrap.js"></script> -->
+        <script type="text/javascript" src="js/jquery.min.js"></script>
     </body>
 </html>

@@ -16,18 +16,116 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+/** RESET **/
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
-
+html,
 body {
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    font-size:14px;
     height:100%;
     margin:0px;
     padding:0px;
     width:100%;
+    box-sizing: border-box;
 }
+/*------- CONTAINER -------*/
+#container {
+    display: grid;
+    grid-template-rows: 50px calc(100% - 100px) 50px;
+    background-color: #0a883e;
+    height: 100%;
+}
+/*------- HEADER ----------*/
+header img {
+    max-height: 30px;
+}
+header {
+    padding: 10px;
+    color: #fff;
+    box-shadow: -1px 3px 8px 1px #0a7034;
+    font-size: 1.1em;
+}
+header .logo {
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+header .logo img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+header .bars {
+    display: inline-block;
+    float: right;
+}
+header .bars button {
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+}
+header .bars button:last-child {
+    margin-right: 0;
+}
+header,
 footer {
-    width: 100%;
+    background: rgb(6,66,31);
+    background: linear-gradient(90deg, rgba(6,66,31,1) 0%, rgba(10,136,62,1) 35%, rgba(155,203,66,1) 100%);
+}
+/*------- MAIN ---------*/
+#aba-main img {
+    max-width: 100%;
+    opacity: .3;
+    vertical-align: bottom;
+}
+main {
+    align-self: end;
+}
+#aba-contato img {
+    max-width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+main, 
+main a {
+    color: #fff;
+    text-decoration: none;
+}
+#aba-contato {
+    width: 350px;
+    left: 50%;
+    margin-left: -175px;
+    position: absolute;
+    top: 50%;
+    display: none;
+    margin-top: -85px;
+}
+#aba-contato div {
+    margin-bottom: 10px;
+}
+#aba-contato img {
+    margin-right: 10px;
+}
+#aba-contato .address div {
+    display: inline-block;
+    max-width: calc(100% - 45px);
+    vertical-align: top;
+}
+/*------- FOOTER --------*/
+footer {
+    grid-template-columns: 33.3% 33.3% 33.4%;
+    display: grid;
+}
+footer button {
+    background-color: transparent;
+    border: none;
+}
+footer button img {
+    max-width: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    vertical-align: middle;
 }

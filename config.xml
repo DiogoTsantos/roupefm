@@ -16,6 +16,13 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="www/img/logo.png" />
+    <platform name="android">
+        <icon density="ldpi" src="res/icon/android/ldpi-36-logo.png" />
+        <icon density="mdpi" src="res/icon/android/mdpi-48-logo.png" />
+        <icon density="hdpi" src="res/icon/android/hdpi-72-logo.png" />
+        <icon density="xhdpi" src="res/icon/android/xhdpi-96-logo.png" />
+    </platform>
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
