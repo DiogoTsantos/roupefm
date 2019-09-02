@@ -58,7 +58,6 @@ header .logo img {
     margin-right: 10px;
 }
 header .bars {
-    display: inline-block;
     float: right;
 }
 header .bars button {
@@ -117,12 +116,14 @@ main a {
 footer {
     grid-template-columns: 33.3% 33.3% 33.4%;
     display: grid;
+    align-items: center;
+    justify-items: center;
 }
-footer button {
+footer div {
     background-color: transparent;
     border: none;
 }
-footer button img {
+footer div img {
     max-width: 20px;
     padding: 10px;
     border-radius: 10px;

@@ -17,17 +17,19 @@
  * under the License.
  */
 
-document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady(), false);
 function onDeviceReady() {
-    var audio = jQuery('audio');
+    // var audio = jQuery('audio')[0];
+    var audio = new Audio('http://server01.streamingilimitado.com.br:7126/;');
+    
     audio.play();
-    console.log(audio);
-    jQuery('#play').click(function() {
+    jQuery('#play').on( 'click', function() {        
         if ( ! audio.paused ) {
             audio.pause();
-            this.find('img').prop('src', '../img/pause.png');
+            jQuery(this).find('img').prop('src', 'img/pause.png');
         } else {
             audio.play();
+            jQuery(this).find('img').prop('src', 'img/play-button.png');
         }
     });  
     jQuery('#contato').on( 'click', function() {
