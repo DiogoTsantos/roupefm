@@ -64,6 +64,7 @@ header .bars button {
     margin-right: 20px;
     background-color: transparent;
     border: none;
+    outline: none;
 }
 header .bars button:last-child {
     margin-right: 0;
@@ -82,6 +83,7 @@ footer {
 main {
     align-self: end;
 }
+#aba-social img,
 #aba-contato img {
     max-width: 30px;
     display: inline-block;
@@ -92,21 +94,29 @@ main a {
     color: #fff;
     text-decoration: none;
 }
+#aba-social,
 #aba-contato {
-    width: 350px;
+    width: 310px;
     left: 50%;
     margin-left: -175px;
     position: absolute;
     top: 50%;
     display: none;
     margin-top: -85px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color:rgba(0, 0, 0, 0.6);
 }
-#aba-contato div {
-    margin-bottom: 10px;
+#aba-social > div,
+#aba-contato > div {
+    margin-bottom: 20px;
 }
+#aba-social img,
 #aba-contato img {
     margin-right: 10px;
+    filter: invert(1);
 }
+#aba-contato .about div,
 #aba-contato .address div {
     display: inline-block;
     max-width: calc(100% - 45px);

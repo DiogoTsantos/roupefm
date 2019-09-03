@@ -19,20 +19,28 @@
 
 document.addEventListener("deviceready", onDeviceReady(), false);
 function onDeviceReady() {
-    // var audio = jQuery('audio')[0];
-    var audio = new Audio('http://server01.streamingilimitado.com.br:7126/;');
+    var audio = new Audio('http://server01.streamingilimitado.com.br:7126/stream;');
     
-    audio.play();
-    jQuery('#play').on( 'click', function() {        
+    jQuery('#play').on( 'click', function() {
         if ( ! audio.paused ) {
             audio.pause();
-            jQuery(this).find('img').prop('src', 'img/pause.png');
+            jQuery(this).find('img').prop('src', 'img/play-button.png');
         } else {
             audio.play();
-            jQuery(this).find('img').prop('src', 'img/play-button.png');
+            jQuery(this).find('img').prop('src', 'img/pause.png');
         }
-    });  
+    });
+
     jQuery('#contato').on( 'click', function() {
+        jQuery('#aba-social').fadeOut();
         jQuery('#aba-contato').fadeToggle();
+    });
+    jQuery('#social').on( 'click', function() {
+        jQuery('#aba-contato').fadeOut();
+        jQuery('#aba-social').fadeToggle();
+    });
+
+    jQuery('#minimize').on( 'click', function() {
+        window.plugins.appMinimize.minimize();
     });
 }

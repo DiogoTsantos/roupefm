@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
             * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
@@ -47,7 +47,7 @@
                     <button id="contato">
                         <img src="img/contact.png" alt="Contato" />
                     </button>
-                    <button id="minizar">
+                    <button id="social">
                         <img src="img/smartphone.png" alt="Minimizar" />
                     </button>
                 </div>
@@ -57,6 +57,12 @@
                     <img src="img/bg-mulher.png" alt="Esperança FM"/>
                 </div>
                 <div id="aba-contato">
+                    <div class="about">
+                        <img src="img/fanfare.png" alt="Sobre" />
+                        <div>
+                            Associação Cultural Maria de Souza Campos
+                        </div>
+                    </div>
                     <div class="address">
                         <img src="img/map-location.png" alt="Localização" />
                         <div>
@@ -64,26 +70,30 @@
                         </div>
                     </div>
                     <div>
-                        <img src="img/whatsapp.png" alt="Whatsapp" />
+                        <img src="img/call.png" alt="Telefone" />
                         <a href="tel:79996909284">(79) 9 9690 - 9284</a>
                     </div>
                     <div>
-                        <img src="img/map-location.png" alt="Mail" />
+                        <img src="img/email.png" alt="Mail" />
                         <a href="mailto:esperanca1059fm@gmail.com">esperanca1059fm@gmail.com</a>
+                    </div>                    
+                </div>
+                <div id="aba-social">
+                    <div>
+                        <a href="https://pt-br.facebook.com/esperancafm105.9/">
+                            <img src="img/facebook.png" alt="Facebook" />
+                            Esperança FM 105.9
+                        </a>
                     </div>
-                    <div class="social">
-                        <div>
-                            <a href="https://pt-br.facebook.com/esperancafm105.9/">
-                                <img src="img/facebook.png" alt="Facebook" />
-                                Esperança FM 105.9
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://www.instagram.com/esperancafm105.9/">
-                                <img src="img/instagram.png" alt="Instagram" />
-                                @EsperançaFM105.9
-                            </a>
-                        </div>
+                    <div>
+                        <a href="https://www.instagram.com/esperancafm105.9/">
+                            <img src="img/instagram.png" alt="Instagram" />
+                            @EsperançaFM105.9
+                        </a>
+                    </div>
+                    <div>
+                        <img src="img/whatsapp.png" alt="Whatsapp" />
+                        <a href="https://api.whatsapp.com/send?phone=5579996909284">(79) 9 9690 - 9284</a>
                     </div>
                 </div>
             </main>
@@ -94,8 +104,10 @@
                 <div id="play">
                     <img src="img/play-button.png" alt="Play" />
                 </div>
-                <div id="share">
-                    <img src="img/share.png" alt="Share" />
+                <div id="whatsapp">
+                    <a href="https://api.whatsapp.com/send?phone=5579996909284">
+                        <img src="img/whatsapp.png" alt="Share" />
+                    </a>
                 </div>
                 </audio>
             </footer>
