@@ -19,6 +19,7 @@
 
 document.addEventListener("deviceready", onDeviceReady, false);
 var audio = new Audio('http://server01.streamingilimitado.com.br:7126/stream;');
+var notificationDisplayed = false;
 
 function onDeviceReady() {
     document.addEventListener("online", appOnline, false);
@@ -70,13 +71,16 @@ function isAppOnline() {
 }
 
 function appOffline() {
-    navigator.notification.alert(
-        'Sua conexão está offline, verifique-a e tente novamente.',
-        '',
-        'Conexão Offline',
-        'OK'
-    );
-    navigator.notification.beep(1);
+    if ( ! notificationDisplayed ) {
+        navigator.notification.alert(
+            'Sua conexão está offline, verifique-a e tente novamente.',
+            '',
+            'Conexão Offline',
+            'OK'
+        );
+        navigator.notification.beep(1);
+        notificationDisplayed = true;
+    }
 }
 
 function appOnline() {
@@ -85,5 +89,6 @@ function appOnline() {
     audio.play();
     if ( ! audio.paused ) {
         jQuery('#play img').prop('src', 'img/pause.png');
+        notificationDisplayed = false;
     }
 }
