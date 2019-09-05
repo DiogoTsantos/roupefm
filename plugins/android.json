@@ -12,7 +12,23 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "br.com.roupefm"
+    },
+    "cordova-plugin-dialogs": {
+      "PACKAGE_NAME": "br.com.roupefm"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "br.com.roupefm"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "br.com.roupefm"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "br.com.roupefm"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "br.com.roupefm"
+    }
+  }
 }

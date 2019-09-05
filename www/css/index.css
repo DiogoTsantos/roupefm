@@ -80,9 +80,6 @@ footer {
     opacity: .3;
     vertical-align: bottom;
 }
-main {
-    align-self: end;
-}
 #aba-social img,
 #aba-contato img {
     max-width: 30px;
@@ -96,16 +93,18 @@ main a {
 }
 #aba-social,
 #aba-contato {
-    width: 310px;
+    width: 290px;
     left: 50%;
-    margin-left: -175px;
+    margin-left: -165px;
     position: absolute;
     top: 50%;
     display: none;
     margin-top: -85px;
+    line-height: 20px;
     padding: 20px;
     border-radius: 6px;
     background-color:rgba(0, 0, 0, 0.6);
+    grid-row: 2;
 }
 #aba-social > div,
 #aba-contato > div {
@@ -122,6 +121,33 @@ main a {
     max-width: calc(100% - 45px);
     vertical-align: top;
 }
+main {
+    grid-template-rows: 20% 80%;
+    display: grid;
+}
+#divulgacao {
+    align-self: center;
+    grid-row: 1;
+    text-indent: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: rotate-text 8s cubic-bezier(0.4, 0, 1, 1) infinite;
+}
+#aba-main {
+    align-self: end;
+    grid-row: 2;
+}
+@keyframes rotate-text{
+    from {
+        text-indent: 100%;
+    }
+    to {
+        text-indent: -100%;
+    }
+ }
 /*------- FOOTER --------*/
 footer {
     grid-template-columns: 33.3% 33.3% 33.4%;

@@ -17,17 +17,27 @@
  * under the License.
  */
 
-document.addEventListener("deviceready", onDeviceReady(), false);
+document.addEventListener("deviceready", onDeviceReady, false);
+var audio = new Audio('http://server01.streamingilimitado.com.br:7126/stream;');
+
 function onDeviceReady() {
-    var audio = new Audio('http://server01.streamingilimitado.com.br:7126/stream;');
-    
+    document.addEventListener("online", appOnline, false);
+    document.addEventListener("offline", appOffline, false);
+
+    if ( isAppOnline() ) {
+        audio.play();
+        jQuery('#play img').prop('src', 'img/pause.png');
+    }
+
     jQuery('#play').on( 'click', function() {
-        if ( ! audio.paused ) {
+        if ( ! audio.paused ) {            
             audio.pause();
             jQuery(this).find('img').prop('src', 'img/play-button.png');
         } else {
-            audio.play();
-            jQuery(this).find('img').prop('src', 'img/pause.png');
+            if ( isAppOnline() ) {
+                audio.play();
+                jQuery(this).find('img').prop('src', 'img/pause.png');
+            }
         }
     });
 
@@ -35,6 +45,7 @@ function onDeviceReady() {
         jQuery('#aba-social').fadeOut();
         jQuery('#aba-contato').fadeToggle();
     });
+
     jQuery('#social').on( 'click', function() {
         jQuery('#aba-contato').fadeOut();
         jQuery('#aba-social').fadeToggle();
@@ -42,5 +53,38 @@ function onDeviceReady() {
 
     jQuery('#minimize').on( 'click', function() {
         window.plugins.appMinimize.minimize();
+        cordova.plugins.notification.local.schedule({
+            title: 'Em Reprodução'
+        });
     });
+
+    cordova.plugins.notification.local.on("click", function (notification) {
+        joinMeeting(notification.data.meetingId);
+    });
+}
+
+function isAppOnline() {
+    if ( ! navigator.onLine ) {       
+        return false;
+    }
+    return true;
+}
+
+function appOffline() {
+    navigator.notification.alert(
+        'Sua conexão está offline, verifique-a e tente novamente.',
+        '',
+        'Conexão Offline',
+        'OK'
+    );
+    navigator.notification.beep(1);
+}
+
+function appOnline() {
+    audio.pause();
+    audio = new Audio('http://server01.streamingilimitado.com.br:7126/stream;');
+    audio.play();
+    if ( ! audio.paused ) {
+        jQuery('#play img').prop('src', 'img/pause.png');
+    }
 }
