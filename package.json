@@ -11,21 +11,18 @@
     "license": "Apache-2.0",
     "dependencies": {
         "cordova-android": "^7.1.4",
-        "cordova-plugin-appminimize": "^1.0.1",
-        "cordova-plugin-badge": "^0.8.8",
+        "cordova-plugin-background-mode": "^0.7.3",
         "cordova-plugin-device": "^2.0.3",
         "cordova-plugin-dialogs": "^2.0.2",
-        "cordova-plugin-local-notification": "^0.9.0-beta.2",
         "cordova-plugin-network-information": "^2.0.2",
         "cordova-plugin-whitelist": "^1.3.4"
     },
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
-            "cordova-plugin-appminimize": {},
             "cordova-plugin-dialogs": {},
             "cordova-plugin-network-information": {},
-            "cordova-plugin-local-notification": {}
+            "cordova-plugin-background-mode": {}
         },
         "platforms": [
             "android"

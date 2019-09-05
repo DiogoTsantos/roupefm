@@ -15,14 +15,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "cordova-plugin-appminimize": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-appminimize"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-dialogs": {
     "source": {
       "type": "registry",
@@ -35,14 +27,6 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-network-information"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-local-notification": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-local-notification"
     },
     "is_top_level": true,
     "variables": {}
@@ -61,6 +45,14 @@
       "id": "cordova-plugin-badge@>=0.8.5"
     },
     "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-background-mode": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-background-mode"
+    },
+    "is_top_level": true,
     "variables": {}
   }
 }

@@ -24,6 +24,12 @@ function onDeviceReady() {
     document.addEventListener("online", appOnline, false);
     document.addEventListener("offline", appOffline, false);
 
+    cordova.plugins.backgroundMode.enable();
+    cordova.plugins.backgroundMode.setDefaults({
+        title: 'Tocando as Melhores Músicas',
+        text: '',
+    });
+
     if ( isAppOnline() ) {
         audio.play();
         jQuery('#play img').prop('src', 'img/pause.png');
@@ -52,14 +58,7 @@ function onDeviceReady() {
     });
 
     jQuery('#minimize').on( 'click', function() {
-        window.plugins.appMinimize.minimize();
-        cordova.plugins.notification.local.schedule({
-            title: 'Em Reprodução'
-        });
-    });
-
-    cordova.plugins.notification.local.on("click", function (notification) {
-        joinMeeting(notification.data.meetingId);
+        cordova.plugins.backgroundMode.moveToBackground();
     });
 }
 
