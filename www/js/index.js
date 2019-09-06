@@ -21,6 +21,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var audio = new Audio('http://server01.streamingilimitado.com.br:7126/stream;');
 var notificationDisplayed = false;
 
+var currentTime;
+
 function onDeviceReady() {
     document.addEventListener("online", appOnline, false);
     document.addEventListener("offline", appOffline, false);
@@ -37,7 +39,7 @@ function onDeviceReady() {
     }
 
     jQuery('#play').on( 'click', function() {
-        if ( ! audio.paused ) {            
+        if ( ! audio.paused ) {
             audio.pause();
             jQuery(this).find('img').prop('src', 'img/play-button.png');
         } else {
@@ -61,6 +63,8 @@ function onDeviceReady() {
     jQuery('#minimize').on( 'click', function() {
         cordova.plugins.backgroundMode.moveToBackground();
     });
+
+    setInterval(retryPlay, 5000);
 }
 
 function isAppOnline() {
@@ -91,4 +95,11 @@ function appOnline() {
         jQuery('#play img').prop('src', 'img/pause.png');
         notificationDisplayed = false;
     }
+}
+
+function retryPlay() {
+    if ( currentTime == audio.currentTime ) {
+        audio.play();
+    }
+    currentTime = audio.currentTime;
 }
