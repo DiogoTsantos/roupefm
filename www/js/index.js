@@ -98,8 +98,9 @@ function appOnline() {
 }
 
 function retryPlay() {
-    if ( currentTime == audio.currentTime ) {
+    if ( currentTime == audio.currentTime && ! jQuery('#play img').prop('src').includes('play-button') ) {
         audio.play();
+        jQuery('#play img').prop('src', 'img/pause.png');
     }
     currentTime = audio.currentTime;
 }
